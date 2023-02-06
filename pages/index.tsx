@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '@/components/Header'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -18,7 +19,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p className={inter.className}>Start Project</p>
+      <div className='justify-center items-center flex flex-col'>
+        <Header />
+        <p className={inter.className + " dark:text-slate-400"}>Switch Button</p>
+      </div>
     </>
   )
 }
