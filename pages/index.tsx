@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useTheme } from 'next-themes'
 
 // NOTE: 字体的使用
 const inter = Inter({ subsets: ['latin'] })
@@ -10,6 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
  */
 
 export default function Home() {
+  const { theme, setTheme } = useTheme()
   return (
     <>
       <Head>
@@ -18,7 +20,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p className={inter.className}>Start Project</p>
+      <div className='justify-center items-center flex flex-col'>
+      <p className={inter.className + " dark:text-slate-400"}>Start Project</p>
+      <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme}</button>
+      </div>
     </>
   )
 }
