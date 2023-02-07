@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Header from '@/components/Header'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import Header from '@/components/Header';
+import { Inter } from '@next/font/google';
+import styles from '@/styles/Home.module.css';
 
 // NOTE: 字体的使用
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 /*
   在要使用字体的地方- className加上 inter.className
   <p className={inter.className}>...</p>
@@ -19,10 +19,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='justify-center items-center flex flex-col'>
+      <div className="justify-center items-center flex flex-col">
         <Header />
-        <p className={inter.className + " dark:text-slate-400"}>Switch Button</p>
+        <p className={inter.className + ' dark:text-slate-400'}>
+          Switch Button
+        </p>
       </div>
     </>
-  )
+  );
 }
