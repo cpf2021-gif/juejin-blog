@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import Header from '@/components/Header';
+import BaseLayout from '@/components/BaseLayout';
 import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css';
 
 // NOTE: 字体的使用
 const inter = Inter({ subsets: ['latin'] });
@@ -19,12 +18,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="justify-center items-center flex flex-col">
-        <Header />
-        <p className={inter.className + ' dark:text-slate-400'}>
-          Switch Button
-        </p>
-      </div>
+      <BaseLayout>
+        <section className="flex flex-col justify-center items-center space-y-10 mt-4">
+          <h1 className={inter.className}>内容...</h1>
+        </section>
+      </BaseLayout>
     </>
   );
 }
