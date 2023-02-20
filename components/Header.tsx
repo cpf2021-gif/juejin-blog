@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 
 export default function Header() {
   return (
-    <header className='border-b-[1px] border-gray-300'>
+    <header className='border-b-[1px] border-gray-300 dark:border-slate-500'>
       <div className="container flex px-4 justify-around items-center h-14 mx-auto">
         <Navigation />
         <Button />

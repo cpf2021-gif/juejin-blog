@@ -1,6 +1,8 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 import Link from 'next/link';
 import Image from 'next/image';
+import {navigationstate} from '../state/navigationstate.js'
 import jjblog from '@/public/jjtb.svg';
 
 export default function Navigation() {
@@ -21,6 +23,9 @@ export default function Navigation() {
       content: '活动',
     },
   ];
+
+  const [focu, setFocu] = useRecoilState(navigationstate);
+
   return (
     <div className="flex">
       <Link className="flex" href="/">
@@ -36,9 +41,21 @@ export default function Navigation() {
       <ul className="flex">
         {links.map((link) => {
           return (
-            <li key={link.id} className="mx-4">
+            <li
+              key={link.id}
+              className="mx-4"
+              onClick={() => {
+                setFocu(link.id);
+              }}
+            >
               <Link href={link.url}>
-                <p className="dark:text-white/86 dark:hover:text-white/60">
+                <p
+                  className={
+                    focu === link.id
+                      ? 'text-blue-700'
+                      : 'dark:text-white/86 dark:hover:text-white/60'
+                  }
+                >
                   {link.content}
                 </p>
               </Link>
